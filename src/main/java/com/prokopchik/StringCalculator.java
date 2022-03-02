@@ -21,9 +21,8 @@ public class StringCalculator {
                             StringBuffer();
                     while (i < tokens.length &&
                             tokens[i] >= '0' &&
-                            tokens[i] <= '9') {
+                            tokens[i] <= '9')
                         stringbuffer.append(tokens[i++]);
-                    }
                     values.push(Double.parseDouble(stringbuffer.
                             toString()));
                     i--;
@@ -35,8 +34,8 @@ public class StringCalculator {
                         values.push(applyOperator(operators.pop(),
                                 values.pop(),
                                 values.pop()));
-                        operators.pop();
                     }
+                    operators.pop();
 
                 } else if (tokens[i] == '+' ||
                         tokens[i] == '-' ||
@@ -49,7 +48,7 @@ public class StringCalculator {
                                 values.pop(),
                                 values.pop()));
                     }
-                        operators.push(tokens[i]);
+                    operators.push(tokens[i]);
                 } else {
                     throw new UnsupportedOperationException("Entered values are incorrect");
                 }
@@ -58,8 +57,8 @@ public class StringCalculator {
                 values.push(applyOperator(operators.pop(),
                         values.pop(),
                         values.pop()));
-                return values.pop();
             }
+            return values.pop();
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
